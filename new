@@ -2,3 +2,13 @@
 新的分支
 master分支 dev分支
 merge is merge
+
+W/System.err(11400):    at org.apache.cordova.CordovaBridge.jsExec(CordovaBridge
+.java:64)
+
+title4,title5,title3,addrT,todayWorkT,tomorrowPlanT,problemFeedback,hotelPhone,channelExpansion,secondTeam,promotion,activityCondition,monthPlanOfSolar,monthFinishOfSolar,monthFinishRateOfSolar,monthPlanOfWater,monthFinishOfWater,monthMerchantPlanOfSolar,monthMerchantFinishOfSolar,monthFinishRateOfWater,monthMerchantPlanOfWater,monthMerchantFinishOfWater,activityPlan,activityFinish
+
+channelExpansion
+secondTeam
+promotion
+activityCondition
