@@ -1,0 +1,22 @@
+{
+    "name": "electron-mac-app",
+    "version": "1.0.0",
+    "description": "A Electron application",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "repository": "https://github.com/ElizabethMa/electron-mac-app.git",
+    "keywords": [
+        "Electron",
+        "quick",
+        "start",
+        "tutorial",
+        "demo"
+    ],
+    "author": "ElizabethMa",
+    "license": "CC0-1.0",
+    "devDependencies": {
+        "electron": "^1.4.1"
+    }
+}
