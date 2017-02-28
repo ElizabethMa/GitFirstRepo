@@ -1,3 +1,4 @@
 node_modules
 npm-debug.log
 Electron API Demos.app
+Electron API Demos.app/**
