@@ -1,8 +1,8 @@
 var axios = require('axios');
 
-var id = 'YOUR_CLIENT_ID';
-var sec = 'YOUR_SECRET_ID';
-var param = '?client_id=' + id + '&client_secret=' + sec;
+var id = 'ElizabethMa';
+var sec = 'MaYanQiong';
+var param = '';//?client_id=' + id + '&client_secret=' + sec;
 
 function getUserInfo(username) {
     // return promise
