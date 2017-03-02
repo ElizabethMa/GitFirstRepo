@@ -1,5 +1,5 @@
 # Summary
 
-* [Introduction](/doc/README.md)
-* [inhao](/doc/inhao.md)
+* [Introduction](docs/README.md)
+* [inhao](docs/inhao.md)
 
