@@ -15,6 +15,11 @@ var Home = React.createClass({
                     Start
                 </button>
               </Link>
+              <Link to='/quotes'>
+                <button type="button" className="btn btn-lg btn-success">
+                    Quotes
+                </button>
+              </Link>
             </MainContainer>
         )
     }

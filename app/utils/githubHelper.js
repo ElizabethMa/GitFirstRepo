@@ -2,7 +2,7 @@ var axios = require('axios');
 
 var id = 'ElizabethMa';
 var sec = 'MaYanQiong';
-var param = '';//?client_id=' + id + '&client_secret=' + sec;
+var param = '?client_id=' + id + '&client_secret=' + sec;
 
 function getUserInfo(username) {
     // return promise
