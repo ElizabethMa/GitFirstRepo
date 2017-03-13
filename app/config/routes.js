@@ -9,6 +9,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 import Main from '../main';
 
 import Quotes from '../components/Quotes';
+import QuotesContainer from '../components/Quotes';
 
 const Repos = React.createClass({
   render() {
@@ -57,7 +58,7 @@ const routes = (
       <Route path="/repos/:userName/:repoName" component={ Repo } />
     </Route>
     <Route path='/about' component={ About }></Route>
-    <Route path='/quotes/:type' component={ Quotes }></Route>
+    <Route path='/quotes/:type' component={ QuotesContainer }></Route>
     <Route path='/want' component={ About }></Route>
   </Route>
 </Router>
