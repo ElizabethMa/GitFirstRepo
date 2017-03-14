@@ -33,22 +33,43 @@ class SiderContainer extends React.Component {
 			<Menu theme="white" mode="vertical" defaultSelectedKeys={['sub1']} style={ { height: '100%' } }>
 				<Menu.Item  key="sub1" style={MenuItemStyle}>
 					<Link to='/quotes/main'>
-						<span><Icon style={MenuIconStyle} type="line-chart" /><span style={MenuIconTextStyle}>行情</span></span>
+						<span>
+							<Icon style={MenuIconStyle} type="line-chart" />
+							<span style={MenuIconTextStyle}>行情</span>
+						</span>
 					</Link>
 				</Menu.Item>
 				<Menu.Item  key="sub2" style={MenuItemStyle}>
 					<Link to='/quotes/custom'>
-						<span><Icon style={MenuIconStyle} type="star-o" /><span style={MenuIconTextStyle}>自选</span></span>
+						<span>
+							<Icon style={MenuIconStyle} type="star-o" />
+							<span style={MenuIconTextStyle}>自选</span>
+						</span>
 					</Link>
 				</Menu.Item>
 				<Menu.Item  key="sub3" style={MenuItemStyle}>
-					<span><Icon style={MenuIconStyle} type="file-text" /><span style={MenuIconTextStyle}>详情</span></span>
+					<Link to='/details'>
+						<span>
+							<Icon style={MenuIconStyle} type="file-text" />
+							<span style={MenuIconTextStyle}>详情</span>
+						</span>
+					</Link>
 				</Menu.Item>
 				<Menu.Item  key="sub4" style={MenuItemStyle}>
-					<span><Icon style={MenuIconStyle} type="pay-circle-o" /><span style={MenuIconTextStyle}>交易</span></span>
+					<Link to='/trade'>
+						<span>
+							<Icon style={MenuIconStyle} type="pay-circle-o" />
+							<span style={MenuIconTextStyle}>交易</span>
+						</span>
+					</Link>
 				</Menu.Item>
 				<Menu.Item  key="sub5" style={MenuItemStyle}>
-					<span><Icon style={MenuIconStyle} type="team" /><span style={MenuIconTextStyle}>圈子</span></span>
+					<Link to='/community'>
+						<span>
+							<Icon style={MenuIconStyle} type="team" />
+							<span style={MenuIconTextStyle}>圈子</span>
+						</span>
+					</Link>
 				</Menu.Item>
 			</Menu>
 		)
@@ -62,7 +83,11 @@ class Main extends React.Component {
 		};
 		const FooterStyle = {
 			height: 32,
-			textAlign: 'center'
+			textAlign: 'center',
+			position: 'fixed',
+			bottom: '0px',
+			width: '100%',
+			background: '#eee'
 		};
 		const contentStyle = {
 			background: '#fff', 

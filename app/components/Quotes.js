@@ -38,9 +38,9 @@ class quotesTable extends React.Component {
           </tr>
         </thead>
         <tbody>
-          { this.props.datas.map((value, index) => {
+          {/*{ this.props.datas.map((value, index) => {
               return <Tr key={ index } rows={ value } />;
-            }) }
+            }) }*/}
         </tbody>
       </table>
     )
