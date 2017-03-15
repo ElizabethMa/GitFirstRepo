@@ -47,7 +47,7 @@ function changePassword(param) {
  * @param {string} mobile 
  */
 function mobileStatus(mobile) {
-    return http.get('/mobiles/' + mobile, param)
+    return http.get('/mobiles/' + mobile)
 }
 
 module.exports = {

@@ -1,23 +1,10 @@
-var React = require('react');
-var Quotes = require('../components/Quotes');
-var githubHelper = require('../utils/githubHelper');
+import React from 'react'
+import Quotes from '../components/Quotes'
 
-var QuotesContainer = React.createClass({
-  getInitialState: function () {
-    return {
-      isLoading: true,
-      scores: []
-    }
-  },
-  componentDidMount: function () {
-      
-  },
-  render: function () {
-    return (
-      <Quotes
-        />
-    )
+class QuotesContainer extends React.Component {
+  render() {
+    return <Quotes />
   }
-});
+}
 
 module.exports = QuotesContainer;

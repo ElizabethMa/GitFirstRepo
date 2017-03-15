@@ -1,54 +1,25 @@
-const React = require('react');
-const ReactRouter = require('react-router');
-const Router = ReactRouter.Router;
-const Route = ReactRouter.Route;
-const Link = ReactRouter.Link;
-const hashHistory = ReactRouter.hashHistory;
-const IndexRoute = ReactRouter.IndexRoute;
+import React from 'react'
+import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router'
 
-import Main from '../main';
+import MainContainer from '../containers/MainContainer';
+import QuotesContainer from '../containers/QuotesContainer';
 
-import MainContainer from '../components/MainContainer';
-import QuotesContainer from '../components/QuotesContainer';
-
-const Repos = React.createClass({
-  render() {
-    return <div>
-             <h2>Repos</h2>
-             <ul>
-               <li>
-                 <Link to="/repos/reactjs/react-router">React Router</Link>
-               </li>
-               <li>
-                 <Link to="/repos/facebook/react">React</Link>
-               </li>
-             </ul>
-             { this.props.children }
-           </div>
-  }
-})
-
-const Repo = React.createClass({
-  render() {
-    return <div>
-             <h3>Repo</h3>
-             { this.props.params.userName } :
-             { this.props.params.repoName }
-           </div>
-  }
-})
 
 const About = React.createClass({
   render() {
-    return <div>About</div>
+    return <div>
+         <h2>About</h2>
+         <h4>props</h4>
+         { JSON.stringify(this.props) }
+         <h4>props.location</h4>
+         { JSON.stringify(this.props.location) }
+         <h4>props.params</h4>
+         { JSON.stringify(this.props.params) }
+         <h4>props.route</h4>
+         { JSON.stringify(this.props.route) }
+      </div>
   }
-})
-
-const Home = React.createClass({
-  render() {
-    return <div>Home</div>
-  }
-})
+});
 
 const routes = (
 <Router history={ hashHistory }>
