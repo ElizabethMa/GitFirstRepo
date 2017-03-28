@@ -5,94 +5,98 @@
 参考 [electron quick-start](https://electron.atom.io/docs/tutorial/quick-start/)
 
 1. file `package.json`
-    ```
-    {...
-        "main": "main.js",
-        "scripts": {
-            "start": "electron ."
-        },
-    ...}
-    ```
+
+```json
+{
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    }, ...
+}
+```
 
 2. file `main.js`
-    ```
-    // 入口文件，控制这个 APP 的主线程 **main process**
 
-    const {app, BrowserWindow} = require('electron')
-    const path = require('path')
-    const url = require('url')
+```js
+// 入口文件，控制这个 APP 的主线程 **main process**
 
-    // Keep a global reference of the window object, if you don't, the window will
-    // be closed automatically when the JavaScript object is garbage collected.
-    let win
+const {app, BrowserWindow} = require('electron')
+const path = require('path')
+const url = require('url')
 
-    function createWindow () {
-      // Create the browser window.
-      win = new BrowserWindow({width: 800, height: 600})
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let win
 
-      // and load the index.html of the app.
-      win.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file:',
-        slashes: true
-      }))
+function createWindow () {
+  // Create the browser window.
+  win = new BrowserWindow({width: 800, height: 600})
 
-      // Open the DevTools.
-      win.webContents.openDevTools()
+  // and load the index.html of the app.
+  win.loadURL(url.format({
+    pathname: path.join(__dirname, 'index.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
 
-      // Emitted when the window is closed.
-      win.on('closed', () => {
-        // Dereference the window object, usually you would store windows
-        // in an array if your app supports multi windows, this is the time
-        // when you should delete the corresponding element.
-        win = null
-      })
-    }
+  // Open the DevTools.
+  win.webContents.openDevTools()
 
-    // This method will be called when Electron has finished
-    // initialization and is ready to create browser windows.
-    // Some APIs can only be used after this event occurs.
-    app.on('ready', createWindow)
+  // Emitted when the window is closed.
+  win.on('closed', () => {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    win = null
+  })
+}
 
-    // Quit when all windows are closed.
-    app.on('window-all-closed', () => {
-      // On macOS it is common for applications and their menu bar
-      // to stay active until the user quits explicitly with Cmd + Q
-      if (process.platform !== 'darwin') {
-        app.quit()
-      }
-    })
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', createWindow)
 
-    app.on('activate', () => {
-      // On macOS it's common to re-create a window in the app when the
-      // dock icon is clicked and there are no other windows open.
-      if (win === null) {
-        createWindow()
-      }
-    })
-    ```
+// Quit when all windows are closed.
+app.on('window-all-closed', () => {
+  // On macOS it is common for applications and their menu bar
+  // to stay active until the user quits explicitly with Cmd + Q
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+app.on('activate', () => {
+  // On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (win === null) {
+    createWindow()
+  }
+})
+```
 
 3. file `index.html`
-    ```html
-    <!-- 显示界面的文件 **renderer process** -->
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="UTF-8">
-        <title>Hello World!</title>
-      </head>
-      <body>
-        <h1>Hello World!</h1>
-        We are using node <script>document.write(process.versions.node)</script>,
-        Chrome <script>document.write(process.versions.chrome)</script>,
-        and Electron <script>document.write(process.versions.electron)</script>.
-      </body>
-    </html>
-    ```
+```html
+<!-- 显示界面的文件 **renderer process** -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+  </body>
+</html>
+```
+
 4. run app
-    ```bash
-    npm start
-    ```
+
+```bash
+npm start
+```
 
 
 ## To Use
