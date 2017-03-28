@@ -1,120 +1,41 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router'
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import 'antd/dist/antd.css'
+import Header from './Header'
+import Footer from './Footer'
+import MainContainer from './MainContainer'
+import '../main.css'
 
-const {SubMenu} = Menu;
-const {Header, Content, Sider, Footer} = Layout;
-
-
-class SiderContainer extends React.Component {
-	render() {
-		const MenuItemStyle = {
-			height: '60px',
-			padding: '0px'
-		}
-		const MenuIconStyle = {
-			textAlign: 'center',
-			fontSize: '30px',
-			padding: '5px 15px 0px 15px',
-			lineHeight: '40px'
-		}
-		const MenuIconTextStyle = {
-			lineHeight: '14px',
-			fontSize: '14px',
-			display: 'block',
-			textAlign: 'center',
-			marginTop: '-10px',
-			transform: 'scale(0.83)',
-			whiteSpace: 'nowrap'
-		}
-		return (
-			<Menu theme="white" mode="vertical" defaultSelectedKeys={['sub1']} style={ { height: '100%' } }>
-				<Menu.Item  key="sub1" style={MenuItemStyle}>
-					<Link to='/quotes/main'>
-						<span>
-							<Icon style={MenuIconStyle} type="line-chart" />
-							<span style={MenuIconTextStyle}>行情</span>
-						</span>
-					</Link>
-				</Menu.Item>
-				<Menu.Item  key="sub2" style={MenuItemStyle}>
-					<Link to='/quotes/custom'>
-						<span>
-							<Icon style={MenuIconStyle} type="star-o" />
-							<span style={MenuIconTextStyle}>自选</span>
-						</span>
-					</Link>
-				</Menu.Item>
-				<Menu.Item  key="sub3" style={MenuItemStyle}>
-					<Link to='/details'>
-						<span>
-							<Icon style={MenuIconStyle} type="file-text" />
-							<span style={MenuIconTextStyle}>详情</span>
-						</span>
-					</Link>
-				</Menu.Item>
-				<Menu.Item  key="sub4" style={MenuItemStyle}>
-					<Link to='/trade'>
-						<span>
-							<Icon style={MenuIconStyle} type="pay-circle-o" />
-							<span style={MenuIconTextStyle}>交易</span>
-						</span>
-					</Link>
-				</Menu.Item>
-				<Menu.Item  key="sub5" style={MenuItemStyle}>
-					<Link to='/community'>
-						<span>
-							<Icon style={MenuIconStyle} type="team" />
-							<span style={MenuIconTextStyle}>圈子</span>
-						</span>
-					</Link>
-				</Menu.Item>
-			</Menu>
-		)
-	}
-}
+// var ReactCssTransitionGroup = require('react-addons-css-transition-group');
 
 class Main extends React.Component {
-	render() {
-		const HeaderStyle = {
-			height: 48
-		};
-		const FooterStyle = {
-			height: 32,
-			textAlign: 'center',
-			position: 'fixed',
-			bottom: '0px',
-			width: '100%',
-			background: '#eee'
-		};
-		const contentStyle = {
-			background: '#fff', 
-			borderRadius: '5px',
-			border: '1px solid #ddd',
-			margin: 12, 
-			minHeight: 600 
-		};
-		return (
-			<Layout>
-				<Header style={HeaderStyle}>
-					<h1 style={{color:'#fff', paddingTop: 10}}>DEMO</h1>
-				</Header>
-				<Layout id="components-layout-demo-side">
-					<Sider width={60}>
-						<SiderContainer></SiderContainer>
-					</Sider>
-					<Content style={contentStyle}>
-						{this.props.children}
-					</Content>
-				</Layout>
-				<Footer style={ FooterStyle }>
-					Shinny ©2016 Created by Shinny
-				</Footer>
-			</Layout>
-		)
-	}
+
+    render() {
+        return (
+            <div className='site-warpper'>
+                <div className="site-warpper-inner">
+                    <div className="cover-container">
+                        <Header></Header>
+                        <MainContainer></MainContainer>
+                        <Footer></Footer>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
 
-export default Main;
+/*var Main = React.createClass({
+    render: function() {
+        return (
+            <div className='main-container'>
+              <ReactCssTransitionGroup
+                transitionName= "appear"
+                transitionEnterTimeout= {2000}
+                transitionLeaveTimeout= {2000}>
+                {React.cloneElement(this.props.children, {key:this.props.location.pathname})}
+              </ReactCssTransitionGroup>
+            </div>
+        )
+    }
+});*/
+
+module.exports = Main;

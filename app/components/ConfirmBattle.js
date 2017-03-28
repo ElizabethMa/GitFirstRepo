@@ -1,54 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router';
-import styles from '../styles';
+var React = require('react');
+var PropTypes = React.PropTypes;
+var styles = require('../styles');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
+var UserDetailsWrapper = require('./UserDetailsWrapper');
+var UserDetails = require('./UserDetails');
+var Loading = require('./Loading');
 
-class Td extends React.Component {
-  render() {
-    return (
-      <td>
-        { this.props.value }
-      </td>
-    )
-  }
-}
-
-class Tr extends React.Component {
-  render() {
-    return (
-      <tr>
-        { this.props.rows.map((index) => {
-            return <Td key={ index } value={ index } />;
-          }) }
-      </tr>
-    )
-  }
-}
-
-class quotesTable extends React.Component {
-  render() {
-    return (
-      <table>
-        <thead>
-          <tr>
-            <td>合约ID</td>
-            <td>最新价</td>
-            <td>最高价</td>
-            <td>最低价</td>
-            <td>开盘价</td>
-          </tr>
-        </thead>
-        <tbody>
-          {/*{ this.props.datas.map((value, index) => {
-              return <Tr key={ index } rows={ value } />;
-            }) }*/}
-        </tbody>
-      </table>
-    )
-  }
-}
-
-/*var MainContainer = require('./MainContainer');
+var MainContainer = require('./MainContainer');
 function ConfirmBattle (props) {
   return props.isLoading === true
     ? <Loading/>
@@ -79,6 +38,6 @@ ConfirmBattle.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   onInitiateBattle: PropTypes.func.isRequired,
   playersInfo: PropTypes.array.isRequired,
-}*/
+}
 
-module.exports = quotesTable;
+module.exports = ConfirmBattle;

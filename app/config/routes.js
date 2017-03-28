@@ -1,38 +1,25 @@
-import React from 'react'
-import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router'
+import React from 'react';
+import {Router, Route, hashHistory, IndexRoute} from 'react-router';
+import Main from '../components/Main';
 
-import MainContainer from '../containers/MainContainer';
-import QuotesContainer from '../containers/QuotesContainer';
+var Home = require("../components/Home");
+var PromptContainer = require('../containers/PromptContainer');
+var ConfirmBattleContainer = require('../containers/ConfirmBattleContainer');
+var ResultsContainer = require('../containers/ResultsContainer');
 
-
-const About = React.createClass({
-  render() {
-    return <div>
-         <h2>About</h2>
-         <h4>props</h4>
-         { JSON.stringify(this.props) }
-         <h4>props.location</h4>
-         { JSON.stringify(this.props.location) }
-         <h4>props.params</h4>
-         { JSON.stringify(this.props.params) }
-         <h4>props.route</h4>
-         { JSON.stringify(this.props.route) }
-      </div>
-  }
-});
-
-const routes = (
-<Router history={ hashHistory }>
-  <Route path='/' component={ MainContainer }>
-    <IndexRoute component={ QuotesContainer } />
-    <Route path='/quotes/:type' component={ QuotesContainer }></Route>
-    <Route path='/details' component={ About }>
-      {/*<Route path="/details/:insid" component={ About } />*/}
+var routes = (
+  <Router history={hashHistory}>
+    <Route path='/' component={Main}>
+        <IndexRoute component={Home}></IndexRoute>
+        <Route path='home' component={Home}></Route>
+        <Route path='about' component={Home}></Route>
+        <Route path='service' component={Home}></Route>
+        <Route path='price' component={Home}></Route>
+        <Route path='connect' component={Home}></Route>
+        <Route path='login' component={Home}></Route>
+        <Route path='regist' component={Home}></Route>
     </Route>
-    <Route path='/trade' component={ About }></Route>
-    <Route path='/community' component={ About }></Route>
-  </Route>
-</Router>
+  </Router>
 );
 
 module.exports = routes;
