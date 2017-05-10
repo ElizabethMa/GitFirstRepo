@@ -11,17 +11,14 @@
     <!-- All of the Node.js APIs are available in this renderer process. -->
     We are using Node.js
     <script>
-        document.write(process.versions.node)
+        document.write(JSON.stringify(process.versions, null, 2))
     </script>, Chromium
     <script>
         document.write(process.versions.chrome)
     </script>, and Electron
     <script>
         document.write(process.versions.electron)
-    </script>.
-    <hr/>
-    <h1><a href="./react_app/index.html">React App</a></h1>
-    <a href="./react-redux-antd-starter-master/dist/index.html">react-redux-antd-starter-master</a>
+    </script>
 </body>
 
 <script>

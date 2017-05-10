@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header'
+import HeaderContent from './HeaderContent'
 import Footer from './Footer'
 import MainContainer from './MainContainer'
 import '../main.css'
@@ -7,14 +8,14 @@ import '../main.css'
 // var ReactCssTransitionGroup = require('react-addons-css-transition-group');
 
 class Main extends React.Component {
-
     render() {
         return (
             <div className='site-warpper'>
                 <div className="site-warpper-inner">
                     <div className="cover-container">
-                        <Header></Header>
-                        <MainContainer></MainContainer>
+                        <Header path={this.props.location.pathname}></Header>
+                        <MainContainer>{this.props.children}
+                        </MainContainer>
                         <Footer></Footer>
                     </div>
                 </div>
@@ -22,6 +23,8 @@ class Main extends React.Component {
         )
     }
 }
+
+
 
 /*var Main = React.createClass({
     render: function() {

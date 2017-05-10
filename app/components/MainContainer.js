@@ -9,6 +9,7 @@ function MainContainer(props){
             <p className="lead">
               <a href="#" className="btn btn-lg btn-default">Learn more</a>
             </p>
+            {props.children}
         </div>
     )
 }
